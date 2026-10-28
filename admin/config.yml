@@ -1,0 +1,61 @@
+backend:
+  name: git-gateway
+  branch: master
+
+publish_mode: simple
+media_folder: "images/updates"
+public_folder: "/images/updates"
+site_url: "https://bhavya-associates.netlify.app"
+display_url: "https://bhavya-associates.netlify.app"
+
+collections:
+  - name: "updates"
+    label: "Updates & Insights"
+    files:
+      - name: "feed"
+        label: "Public updates"
+        file: "updates.json"
+        format: "json"
+        fields:
+          - label: "Updates"
+            name: "updates"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.category}}"
+            collapsed: true
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "string"
+                hint: "Keep it clear and concise."
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - "Claim Update"
+                  - "Policy Information"
+                  - "Financial Tip"
+                  - "Service News"
+              - label: "Date"
+                name: "date"
+                widget: "datetime"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                format: "YYYY-MM-DD"
+              - label: "Short summary"
+                name: "summary"
+                widget: "text"
+                hint: "A few sentences for the public website. Do not include private client information."
+              - label: "Photo (optional)"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Upload an image you have permission to publish."
+              - label: "Photo description (optional)"
+                name: "image_alt"
+                widget: "string"
+                required: false
+              - label: "Publish this update"
+                name: "published"
+                widget: "boolean"
+                default: true
+                hint: "Turn off to save the update without showing it on the public site."

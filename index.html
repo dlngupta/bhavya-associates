@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172d3b">
+  <meta name="description" content="Thoughtful financial guidance from Bhavya Associates. Explore health cover, term insurance and practical steps towards long-term financial stability.">
+  <title>Bhavya Associates | A more confident financial future</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #172d3b;
+      --navy-deep: #10232f;
+      --navy-soft: #294655;
+      --teal: #8cc6b5;
+      --coral: #d88165;
+      --cream: #f7f5ef;
+      --white: #fff;
+      --ink: #20313a;
+      --muted: #68777b;
+      --line: #e3e4dc;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body { margin: 0; color: var(--ink); background: var(--cream); }
+    a { color: inherit; }
+    .wrap { width: min(1160px, calc(100% - 52px)); margin: 0 auto; }
+    h1, h2, h3, p { margin-top: 0; }
+
+    .site-header { position: sticky; top: 0; z-index: 5; border-bottom: 1px solid rgba(23,45,59,.09); background: rgba(247,245,239,.96); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand-mark { width: 43px; height: 43px; flex: 0 0 43px; }
+    .brand-copy { display: grid; gap: 2px; }
+    .brand-copy strong { color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 20px; letter-spacing: -.03em; }
+    .brand-copy small { color: var(--muted); font-size: 9px; letter-spacing: .19em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a:not(.nav-cta) { color: #58696e; font-size: 13px; text-decoration: none; }
+    .nav-links a:not(.nav-cta):hover { color: var(--navy); }
+    .button, .nav-cta {
+      min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 0 19px; border: 1px solid var(--navy); border-radius: 3px;
+      background: var(--navy); color: var(--white); font-size: 13px; font-weight: 650;
+      text-decoration: none; transition: background .2s, transform .2s;
+    }
+    .button:hover, .nav-cta:hover { transform: translateY(-2px); background: var(--navy-deep); }
+    .button-outline { border-color: rgba(255,255,255,.45); background: transparent; }
+    .button-outline:hover { background: var(--white); color: var(--navy); }
+    .auth-notice { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px max(26px, calc((100% - 1160px) / 2)); background: #e6eee8; color: var(--navy); font-size: 13px; line-height: 1.6; }
+    .auth-notice[hidden] { display: none; }
+    .auth-notice a { flex: 0 0 auto; color: var(--navy); font-weight: 700; text-underline-offset: 3px; }
+
+    .hero { position: relative; overflow: hidden; padding: 77px 0 36px; background: var(--navy); color: var(--white); }
+    .hero::before { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 46px 46px; content: ""; mask-image: linear-gradient(90deg, transparent, #000 48%, #000); }
+    .hero::after { position: absolute; top: -300px; right: -225px; width: 700px; height: 700px; border: 1px solid rgba(140,198,181,.16); border-radius: 50%; box-shadow: 0 0 0 55px rgba(140,198,181,.03), 0 0 0 110px rgba(140,198,181,.03); content: ""; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 64px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #4d7c6e; font-size: 10px; font-weight: 750; letter-spacing: .18em; text-transform: uppercase; }
+    .eyebrow::before { width: 22px; height: 1px; background: var(--coral); content: ""; }
+    .hero .eyebrow { color: var(--teal); }
+    h1 { max-width: 560px; margin: 20px 0 17px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(46px, 5.5vw, 70px); font-weight: 400; letter-spacing: -.055em; line-height: 1.04; }
+    h1 em { color: var(--teal); font-weight: 400; }
+    .hero-copy > p { max-width: 455px; margin-bottom: 26px; color: rgba(255,255,255,.73); font-size: 15px; line-height: 1.85; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; }
+    .hero-note { display: flex; align-items: center; gap: 9px; margin-top: 24px; color: rgba(255,255,255,.63); font-size: 11px; }
+    .hero-note svg { width: 17px; height: 17px; color: var(--teal); }
+    .visual { position: relative; min-width: 0; padding: 20px; border: 1px solid rgba(140,198,181,.26); background: rgba(255,255,255,.035); }
+    .visual::before, .visual::after { position: absolute; z-index: 2; width: 20px; height: 20px; border-color: var(--coral); content: ""; pointer-events: none; }
+    .visual::before { top: -4px; left: -4px; border-top: 2px solid; border-left: 2px solid; }
+    .visual::after { right: -4px; bottom: -4px; border-right: 2px solid; border-bottom: 2px solid; }
+    .visual-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 1px 1px 16px; color: rgba(255,255,255,.73); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+    .visual-heading span:last-child { color: var(--teal); font-size: 9px; }
+    .plan-card { padding: 22px; background: #f8f7f1; color: var(--navy); }
+    .plan-card-top { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+    .plan-card-top small { color: var(--muted); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+    .plan-card-top strong { display: block; margin-top: 6px; font-family: Georgia, "Times New Roman", serif; font-size: 21px; font-weight: 400; }
+    .plan-icon { width: 37px; height: 37px; display: grid; place-items: center; border-radius: 50%; background: #e4eee8; color: #467564; }
+    .plan-icon svg { width: 19px; height: 19px; }
+    .plan-list { display: grid; gap: 10px; margin: 21px 0 0; padding: 0; list-style: none; }
+    .plan-list li { display: grid; grid-template-columns: 26px 1fr auto; align-items: center; gap: 9px; padding: 10px 0; border-top: 1px solid #e7e7df; }
+    .plan-list .step { width: 25px; height: 25px; display: grid; place-items: center; border: 1px solid #d7e4dc; border-radius: 50%; color: #457565; font-family: Georgia, serif; font-size: 11px; }
+    .plan-list b { color: var(--navy); font-size: 11px; font-weight: 650; }
+    .plan-list small { color: var(--muted); font-size: 9px; text-align: right; }
+    .plan-foot { display: flex; align-items: center; gap: 8px; margin-top: 15px; padding: 11px 12px; background: #edf2eb; color: #536765; font-size: 10px; line-height: 1.5; }
+    .plan-foot svg { width: 15px; height: 15px; flex: 0 0 15px; color: #477a68; }
+    .trust-strip { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3,1fr); margin-top: 60px; border-top: 1px solid rgba(255,255,255,.19); }
+    .trust-item { display: flex; align-items: center; gap: 11px; padding: 17px 12px 0 0; color: rgba(255,255,255,.75); font-size: 11px; }
+    .trust-item + .trust-item { padding-left: 20px; border-left: 1px solid rgba(255,255,255,.19); }
+    .trust-item b { color: var(--teal); font-family: Georgia, serif; font-size: 15px; font-weight: 400; }
+
+    .updates { padding: 82px 0; background: #fff; }
+    .updates-heading { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 30px; }
+    .updates-heading > p { max-width: 390px; margin: 0 0 3px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .updates-status { padding: 23px; border: 1px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .updates-status a { color: var(--navy); font-weight: 650; text-underline-offset: 3px; }
+    .featured-update { display: grid; grid-template-columns: 1fr minmax(220px, .75fr); min-height: 245px; border: 1px solid var(--line); background: var(--cream); }
+    .featured-copy { display: flex; flex-direction: column; align-items: start; padding: 28px; }
+    .update-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; color: var(--muted); font-size: 10px; }
+    .update-category { padding: 5px 8px; background: #e6eee8; color: #426c5f; font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .featured-copy h3 { margin: 17px 0 9px; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: clamp(24px, 3vw, 33px); font-weight: 400; line-height: 1.15; }
+    .featured-copy p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; white-space: pre-line; }
+    .featured-image { display: block; width: 100%; height: 100%; min-height: 245px; object-fit: cover; background: #e9eee7; }
+    .carousel-controls { display: flex; align-items: center; justify-content: flex-end; gap: 11px; margin-top: 13px; }
+    .carousel-controls[hidden], .featured-image[hidden], .recent-updates[hidden] { display: none; }
+    .carousel-controls button { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid #d5ddd6; border-radius: 50%; background: var(--white); color: var(--navy); font: inherit; font-size: 17px; cursor: pointer; }
+    .carousel-controls button:hover { border-color: var(--navy); background: var(--navy); color: var(--white); }
+    .carousel-controls button:disabled { opacity: .45; cursor: not-allowed; }
+    .carousel-count { min-width: 49px; color: var(--muted); font-size: 11px; text-align: center; }
+    .recent-updates { margin-top: 35px; }
+    .recent-heading { margin: 0 0 16px; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 23px; font-weight: 400; }
+    .update-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .update-card { min-width: 0; padding: 18px; border: 1px solid var(--line); background: var(--white); }
+    .update-card h4 { margin: 12px 0 7px; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 18px; font-weight: 400; line-height: 1.3; }
+    .update-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.7; white-space: pre-line; }
+
+    .services { padding: 88px 0 94px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 35px; }
+    h2 { margin: 13px 0 0; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: clamp(36px, 4.4vw, 54px); font-weight: 400; letter-spacing: -.045em; line-height: 1.08; }
+    .section-heading > p { max-width: 385px; margin-bottom: 3px; color: var(--muted); font-size: 13px; line-height: 1.85; }
+    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .service-card { min-height: 206px; padding: 23px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.46); transition: background .2s, transform .2s; }
+    .service-card:hover { transform: translateY(-3px); background: var(--white); }
+    .service-top { display: flex; align-items: center; justify-content: space-between; }
+    .service-number { color: #87928d; font-family: Georgia, serif; font-size: 12px; }
+    .service-icon { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid #dce5da; border-radius: 50%; color: #426c5f; }
+    .service-icon svg { width: 17px; height: 17px; }
+    .service-card h3 { margin: 21px 0 8px; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 21px; font-weight: 400; letter-spacing: -.02em; }
+    .service-card p { max-width: 290px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+
+    .foundation { padding: 78px 0; background: #e9eee7; }
+    .foundation-grid { display: grid; grid-template-columns: .84fr 1fr; align-items: start; gap: 95px; }
+    .foundation h2 { max-width: 420px; }
+    .foundation-intro { max-width: 380px; margin: 16px 0 0; color: var(--muted); font-size: 13px; line-height: 1.85; }
+    .foundation-steps { border-top: 1px solid #d4ddd5; }
+    .foundation-step { display: grid; grid-template-columns: 42px 1fr; gap: 13px; padding: 18px 0; border-bottom: 1px solid #d4ddd5; }
+    .foundation-step > span { color: #b7725d; font-family: Georgia, serif; font-size: 13px; }
+    .foundation-step h3 { margin: 0 0 5px; color: var(--navy); font-family: Georgia, serif; font-size: 19px; font-weight: 400; }
+    .foundation-step p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+
+    .approach { padding: 87px 0 93px; }
+    .approach-heading { max-width: 620px; margin-bottom: 34px; }
+    .approach-heading > p { max-width: 495px; margin: 15px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .approach-grid { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--line); }
+    .approach-card { padding: 23px 26px 15px 0; }
+    .approach-card + .approach-card { padding-left: 25px; border-left: 1px solid var(--line); }
+    .approach-card > span { color: var(--coral); font-family: Georgia, serif; font-size: 13px; }
+    .approach-card h3 { margin: 17px 0 7px; color: var(--navy); font-family: Georgia, serif; font-size: 22px; font-weight: 400; }
+    .approach-card p { max-width: 290px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+
+    .contact { position: relative; overflow: hidden; padding: 72px 0; background: var(--navy); color: var(--white); }
+    .contact::after { position: absolute; top: -180px; right: -90px; width: 450px; height: 450px; border: 1px solid rgba(140,198,181,.14); border-radius: 50%; box-shadow: 0 0 0 38px rgba(140,198,181,.035), 0 0 0 76px rgba(140,198,181,.035); content: ""; }
+    .contact-inner { position: relative; z-index: 1; display: grid; grid-template-columns: .8fr 1fr; align-items: center; gap: clamp(32px, 6vw, 82px); }
+    .contact .eyebrow { color: var(--teal); }
+    .contact h2 { color: var(--white); }
+    .contact-copy > p { margin: 12px 0 0; color: rgba(255,255,255,.7); font-size: 13px; line-height: 1.75; }
+    .consultant-card { display: grid; grid-template-columns: 162px 1fr; align-items: center; gap: 18px; margin-top: 25px; padding: 13px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.055); }
+    .consultant-photo { display: block; width: 162px; height: 173px; object-fit: cover; }
+    .consultant-details h3 { margin: 0 0 4px; color: var(--white); font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-weight: 400; line-height: 1.35; }
+    .consultant-details > p { margin: 0 0 14px; color: var(--teal); font-size: 10px; letter-spacing: .05em; }
+    .contact-links { display: grid; gap: 9px; }
+    .contact-links a { width: fit-content; color: rgba(255,255,255,.82); font-size: 11px; text-decoration-color: rgba(255,255,255,.3); text-underline-offset: 3px; overflow-wrap: anywhere; }
+    .contact-links a:hover { color: var(--teal); }
+    .business-card-link { display: inline-block; margin-top: 12px; color: var(--teal); font-size: 10px; text-underline-offset: 3px; }
+    .enquiry-form { display: grid; gap: 10px; padding: 25px; border: 1px solid rgba(255,255,255,.18); background: #f9faf5; color: var(--ink); box-shadow: 0 20px 55px rgba(4,27,22,.19); }
+    .form-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 7px; }
+    .form-step { color: var(--navy); font-size: 10px; font-weight: 750; letter-spacing: .16em; }
+    .form-estimate { color: var(--muted); font-size: 10px; }
+    .enquiry-form label { margin-top: 4px; color: var(--ink); font-size: 11px; font-weight: 650; }
+    .enquiry-form label > span:not(.optional) { color: #a65c42; }
+    .enquiry-form label .optional { color: var(--muted); font-size: 10px; font-weight: 400; }
+    .enquiry-form input, .enquiry-form select, .enquiry-form textarea { width: 100%; min-height: 42px; padding: 10px 12px; border: 1px solid #dfe4db; border-radius: 3px; outline: 0; background: white; color: var(--ink); font: inherit; font-size: 12px; }
+    .enquiry-form textarea { min-height: 78px; resize: vertical; }
+    .enquiry-form input::placeholder, .enquiry-form textarea::placeholder { color: #98a198; }
+    .enquiry-form input:focus, .enquiry-form select:focus, .enquiry-form textarea:focus { border-color: var(--navy-soft); box-shadow: 0 0 0 3px rgba(41,70,85,.1); }
+    .whatsapp-submit { min-height: 47px; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 5px; padding: 0 14px; border: 0; border-radius: 3px; background: #198754; color: white; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; transition: background .18s, transform .18s; }
+    .whatsapp-submit:hover { transform: translateY(-1px); background: #126d43; }
+    .whatsapp-submit svg { width: 20px; height: 20px; }
+    .whatsapp-submit span { font-size: 16px; }
+    .form-privacy { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.6; text-align: center; }
+
+    .cta { padding: 59px 0; background: var(--navy); color: var(--white); }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .cta .eyebrow { color: var(--teal); }
+    .cta h2 { max-width: 570px; margin-top: 12px; color: var(--white); font-size: clamp(32px, 4vw, 45px); }
+    .cta p { max-width: 520px; margin: 12px 0 0; color: rgba(255,255,255,.7); font-size: 13px; line-height: 1.75; }
+    .cta .button { flex: 0 0 auto; border-color: var(--teal); background: var(--teal); color: var(--navy-deep); }
+    .cta .button:hover { background: #a5d6c7; }
+
+    .disclaimer { padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,.12); background: var(--navy-deep); color: rgba(255,255,255,.65); }
+    .disclaimer p { margin: 0; font-size: 10px; line-height: 1.8; }
+    .footer { padding: 22px 0; background: var(--navy-deep); color: rgba(255,255,255,.62); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-brand { color: white; font-family: Georgia, serif; font-size: 17px; }
+    .footer p { margin: 0; font-size: 10px; }
+    :focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+      .hero-copy { max-width: 620px; }
+      .visual { max-width: 620px; }
+      .foundation-grid { grid-template-columns: 1fr; gap: 34px; }
+      .service-grid { grid-template-columns: repeat(2,1fr); }
+      .contact-inner { grid-template-columns: 1fr; gap: 28px; }
+      .consultant-card { width: 100%; max-width: 460px; }
+      .enquiry-form { width: 100%; max-width: 540px; }
+      .update-grid { grid-template-columns: repeat(2,1fr); }
+      .trust-strip { margin-top: 41px; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 36px, 500px); }
+      .nav { min-height: 68px; }
+      .nav-links { gap: 15px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-cta { min-height: 41px; padding: 0 12px; font-size: 11px; }
+      .brand-mark { width: 38px; height: 38px; flex-basis: 38px; }
+      .brand-copy strong { font-size: 18px; }
+      .hero { padding-top: 55px; }
+      .auth-notice { align-items: flex-start; flex-direction: column; gap: 6px; padding: 13px 18px; font-size: 12px; }
+      h1 { font-size: clamp(43px, 12vw, 59px); }
+      .hero-copy > p { font-size: 14px; }
+      .trust-strip { grid-template-columns: 1fr; gap: 0; }
+      .trust-item { padding: 11px 0; }
+      .trust-item + .trust-item { padding-left: 0; border-top: 1px solid rgba(255,255,255,.14); border-left: 0; }
+      .services, .approach { padding: 66px 0; }
+      .section-heading { align-items: start; flex-direction: column; gap: 15px; }
+      .section-heading > p { max-width: 480px; }
+      .updates { padding: 64px 0; }
+      .updates-heading { align-items: start; flex-direction: column; gap: 13px; }
+      .featured-update { grid-template-columns: 1fr; }
+      .featured-copy { padding: 21px; }
+      .featured-image { min-height: 190px; max-height: 260px; grid-row: 1; }
+      .update-grid { grid-template-columns: 1fr; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 174px; padding: 20px; }
+      .foundation { padding: 64px 0; }
+      .approach-grid { grid-template-columns: 1fr; }
+      .approach-card, .approach-card + .approach-card { padding: 19px 0; border-bottom: 1px solid var(--line); border-left: 0; }
+      .approach-card h3 { margin-top: 10px; }
+      .cta { padding: 45px 0; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      .enquiry-form { padding: 18px 15px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 380px) {
+      .consultant-card { grid-template-columns: 112px 1fr; gap: 12px; padding: 10px; }
+      .consultant-photo { width: 112px; height: 130px; }
+      .consultant-details h3 { font-size: 15px; }
+      .contact-links a { font-size: 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Bhavya Associates home">
+        <svg class="brand-mark" viewBox="0 0 48 48" role="img" aria-label="Bhavya Associates mark">
+          <path d="M24 3 44 14.5v19L24 45 4 33.5v-19L24 3Z" fill="#172d3b"/>
+          <path d="M13 29.5 24 12l11 17.5M17 24h14M14 33h20" fill="none" stroke="#8cc6b5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24" cy="36" r="1.5" fill="#d88165"/>
+        </svg>
+        <span class="brand-copy"><strong>Bhavya Associates</strong><small>Plan with confidence</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#updates">Updates</a>
+        <a href="#services">Our guidance</a>
+        <a href="#approach">How we work</a>
+        <a class="nav-cta" href="#whatsapp-enquiry">WhatsApp enquiry <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="auth-notice" id="auth-notice" role="status" aria-live="polite" hidden>
+    <span id="auth-notice-message"></span>
+    <a id="auth-notice-link" href="/admin/" hidden>Open updates editor</a>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid wrap">
+        <div class="hero-copy">
+          <span class="eyebrow">Financial wellbeing · Thoughtfully planned</span>
+          <h1>A steadier future starts with a <em>clear plan.</em></h1>
+          <p>Make confident decisions about the people and goals that matter most. Explore practical financial guidance, health cover and term protection, all shaped around your needs.</p>
+          <div class="hero-actions">
+            <a class="button" href="#services">Explore our guidance <span aria-hidden="true">→</span></a>
+            <a class="button button-outline" href="#approach">How we work</a>
+          </div>
+          <div class="hero-note">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.5 12.2 7l5 .7-3.6 3.5.9 5L10 13.8l-4.5 2.4.9-5L2.8 7.7l5-.7L10 2.5Z" stroke="currentColor" stroke-width="1.2"/></svg>
+            Clear conversations. Considered choices. Your goals first.
+          </div>
+        </div>
+        <div class="visual" role="img" aria-label="Illustration of a personal financial wellbeing plan">
+          <div class="visual-heading"><span>Your financial wellbeing</span><span>A thoughtful starting point</span></div>
+          <div class="plan-card">
+            <div class="plan-card-top">
+              <div><small>A plan built around you</small><strong>Protect what matters.</strong></div>
+              <span class="plan-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 19 6v5c0 4.4-3 7.8-7 10-4-2.2-7-5.6-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.5"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <ol class="plan-list">
+              <li><span class="step">01</span><b>Understand your priorities</b><small>Your goals</small></li>
+              <li><span class="step">02</span><b>Explore protection options</b><small>Your family</small></li>
+              <li><span class="step">03</span><b>Build steady habits</b><small>Your future</small></li>
+            </ol>
+            <div class="plan-foot"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="currentColor"/><path d="M10 6v4l2.7 1.7" stroke="currentColor" stroke-linecap="round"/></svg> Good planning begins with a conversation about what matters to you.</div>
+          </div>
+        </div>
+      </div>
+      <div class="trust-strip wrap" aria-label="Our principles">
+        <div class="trust-item"><b>01</b> Guidance around your priorities</div>
+        <div class="trust-item"><b>02</b> Protection explained in plain language</div>
+        <div class="trust-item"><b>03</b> A long-term view of financial wellbeing</div>
+      </div>
+    </section>
+
+    <section class="updates" id="updates" aria-labelledby="updates-title">
+      <div class="wrap">
+        <div class="updates-heading">
+          <div><span class="eyebrow">From Bhavya Associates</span><h2 id="updates-title">Updates &amp; insights.</h2></div>
+          <p>Helpful information, service updates and stories from our work. Shared with care and respect for our clients.</p>
+        </div>
+        <p class="updates-status" id="updates-status" role="status" aria-live="polite">Loading the latest updates…</p>
+        <div id="updates-feed" hidden>
+          <article class="featured-update" aria-live="polite">
+            <div class="featured-copy">
+              <div class="update-meta"><span class="update-category" id="featured-category"></span><time id="featured-date"></time></div>
+              <h3 id="featured-title"></h3>
+              <p id="featured-summary"></p>
+            </div>
+            <img class="featured-image" id="featured-image" alt="" hidden>
+          </article>
+          <div class="carousel-controls" id="carousel-controls" hidden>
+            <button type="button" id="previous-update" aria-label="Show previous update">←</button>
+            <span class="carousel-count" id="carousel-count" aria-live="polite"></span>
+            <button type="button" id="next-update" aria-label="Show next update">→</button>
+          </div>
+          <div class="recent-updates" id="recent-updates" hidden>
+            <h3 class="recent-heading">More updates</h3>
+            <div class="update-grid" id="update-grid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><span class="eyebrow">Support for life's important decisions</span><h2>Build a strong<br>financial foundation.</h2></div>
+          <p>Explore the areas where thoughtful guidance can help. The right choices depend on your personal situation, priorities and eligibility.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-top"><span class="service-number">01 / HEALTH</span><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-8-4.4-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.6-8 11-8 11Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12h2l1.2-2.5 1.7 5 1.1-2.5H16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <h3>Health Insurance</h3><p>Understand coverage, benefits, exclusions and questions to ask when comparing health insurance options.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-top"><span class="service-number">02 / LIFE</span><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 19 6v5c0 4.4-3 7.8-7 10-4-2.2-7-5.6-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v8m-3-4h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+            <h3>Term Insurance</h3><p>Explore life cover as one way to help protect the people who depend on your income.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-top"><span class="service-number">03 / FINANCIAL PLAN</span><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5m0 14h17M7 15l4-4 3 2 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <h3>Financial Planning</h3><p>Bring your income, regular commitments and future goals into a practical, considered plan.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-top"><span class="service-number">04 / SAVINGS</span><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18m5-14H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="m8 5 4-2 4 2m-8 14 4 2 4-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <h3>Savings &amp; Stability</h3><p>Explore steady saving habits, emergency-fund planning and ways to prepare for unexpected expenses.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-top"><span class="service-number">05 / FAMILY GOALS</span><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20c2-4 5-6 9-6s7 2 9 6M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4 9a3 3 0 0 1 3-3m13 3a3 3 0 0 0-3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+            <h3>Family &amp; Life Goals</h3><p>Start planning for milestones such as education, a home, or a more comfortable retirement.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-top"><span class="service-number">06 / UNDERSTANDING</span><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21V5.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 17a2.5 2.5 0 0 1 2.5-2.5H20M8 7h8m-8 3h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+            <h3>Policy Guidance</h3><p>Get help understanding policy terms, premium commitments, waiting periods and important exclusions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="foundation" id="stability">
+      <div class="foundation-grid wrap">
+        <div>
+          <span class="eyebrow">The building blocks</span>
+          <h2>Stability grows one considered step at a time.</h2>
+          <p class="foundation-intro">A strong financial foundation is personal. Begin with the basics, then make choices that fit your circumstances and evolve as life changes.</p>
+        </div>
+        <div class="foundation-steps">
+          <article class="foundation-step"><span>01</span><div><h3>Know where you stand</h3><p>Take stock of income, expenses, existing cover, savings and financial commitments.</p></div></article>
+          <article class="foundation-step"><span>02</span><div><h3>Prepare for the unexpected</h3><p>Consider an emergency reserve and protection for health and family needs.</p></div></article>
+          <article class="foundation-step"><span>03</span><div><h3>Plan for the long term</h3><p>Set meaningful goals and review your plan as your responsibilities change.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="approach">
+      <div class="wrap">
+        <div class="approach-heading">
+          <span class="eyebrow">Clear guidance, at your pace</span>
+          <h2>Understand first.<br>Choose with confidence.</h2>
+          <p>Financial and insurance decisions can feel complex. Our approach is designed to make the conversation clear and focused on your needs.</p>
+        </div>
+        <div class="approach-grid">
+          <article class="approach-card"><span>01 / LISTEN</span><h3>Start with your priorities</h3><p>Talk through your family, financial commitments, concerns and goals.</p></article>
+          <article class="approach-card"><span>02 / EXPLAIN</span><h3>Make the options clearer</h3><p>Review relevant concepts and policy details, including limits and exclusions.</p></article>
+          <article class="approach-card"><span>03 / PLAN</span><h3>Take a considered next step</h3><p>Decide what to explore further, at a pace that feels right for you.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="next-step">
+      <div class="cta-inner wrap">
+        <div>
+          <span class="eyebrow">Your goals are a good place to begin</span>
+          <h2>Take the first step towards a clearer plan.</h2>
+          <p>Explore our guidance areas and think about the questions you would like answered. A personal conversation can help you identify what matters most.</p>
+        </div>
+        <a class="button" href="#whatsapp-enquiry">WhatsApp enquiry <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section class="contact" id="whatsapp-enquiry">
+      <div class="contact-inner wrap">
+        <div class="contact-copy">
+          <span class="eyebrow">Your goals, our first conversation</span>
+          <h2>What would you like help with?</h2>
+          <p>Share a few details and your message will open in WhatsApp, ready for you to review and send. Please don't include account numbers, medical records or other sensitive personal information.</p>
+          <div class="consultant-card">
+            <img class="consultant-photo" src="lakshmana-swamy-bommisetty-portrait.jpeg" alt="Portrait of MJF Ln. Lakshmana Swamy Bommisetty">
+            <div class="consultant-details">
+              <h3>MJF Ln. Lakshmana Swamy Bommisetty</h3>
+              <p>Financial Consultant · Ongole</p>
+              <div class="contact-links">
+                <a href="tel:+917013061131">Call: +91 70130 61131</a>
+                <a href="https://wa.me/917013061131" target="_blank" rel="noopener noreferrer">WhatsApp: 70130 61131 ↗</a>
+                <a href="mailto:lakshmanaswamyb@gmail.com">lakshmanaswamyb@gmail.com</a>
+              </div>
+              <a class="business-card-link" href="lakshmana-swamy-bommisetty.jpeg" target="_blank" rel="noopener noreferrer">View full business card ↗</a>
+            </div>
+          </div>
+        </div>
+        <form class="enquiry-form" id="enquiry-form">
+          <div class="form-heading">
+            <span class="form-step">FINANCIAL GUIDANCE ENQUIRY</span>
+            <span class="form-estimate">About 30 seconds</span>
+          </div>
+          <label for="enquiry-name">Your name <span aria-hidden="true">*</span></label>
+          <input id="enquiry-name" name="name" type="text" placeholder="e.g. Ramesh Kumar" autocomplete="name" required maxlength="80">
+          <label for="enquiry-service">What would you like to discuss? <span aria-hidden="true">*</span></label>
+          <select id="enquiry-service" name="service" required>
+            <option value="" disabled selected>Select a topic</option>
+            <option>Health insurance</option>
+            <option>Term insurance</option>
+            <option>Financial planning</option>
+            <option>Savings and financial stability</option>
+            <option>Family or life goals</option>
+            <option>Understanding an insurance policy</option>
+            <option>Something else</option>
+          </select>
+          <label for="enquiry-location">Your town or city <span class="optional">(optional)</span></label>
+          <input id="enquiry-location" name="location" type="text" placeholder="Town or city" autocomplete="address-level2" maxlength="100">
+          <label for="enquiry-details">What would you like to know? <span class="optional">(optional)</span></label>
+          <textarea id="enquiry-details" name="details" rows="3" placeholder="A brief note about your goals or questions" maxlength="500"></textarea>
+          <button class="whatsapp-submit" type="submit">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.3 8.1c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c-.2.2-.1.4 0 .6.5.8 1.1 1.4 1.9 1.8.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.2.1.4.3.3.5-.1.5-.3 1-.7 1.3-.4.4-1.1.6-1.7.5-1-.2-2.3-.8-3.5-1.9-1-.9-1.8-2.1-2-3.1-.2-.8 0-1.6.4-2.1Z" fill="currentColor"/></svg>
+            Continue to WhatsApp
+            <span aria-hidden="true">↗</span>
+          </button>
+          <p class="form-privacy">No details are stored on this website. WhatsApp opens with your message ready to send.</p>
+        </form>
+      </div>
+    </section>
+    <aside class="disclaimer" aria-label="Important information">
+      <div class="wrap"><p>Important: This website provides general information only and is not financial, investment, tax, legal or medical advice. Insurance availability, terms, premiums, benefits and eligibility vary by provider and individual circumstances. Review policy documents carefully and consult an appropriately qualified professional before making decisions. No returns or outcomes are guaranteed.</p></div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner wrap">
+      <span class="footer-brand">Bhavya Associates</span>
+      <p>Thoughtful guidance for a more confident financial future.</p>
+      <p>© <span>Bhavya Associates</span></p>
+    </div>
+  </footer>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    (function () {
+      const notice = document.getElementById('auth-notice');
+      const message = document.getElementById('auth-notice-message');
+      const editorLink = document.getElementById('auth-notice-link');
+      const tokenParams = new URLSearchParams(window.location.hash.slice(1));
+      const authActions = ['confirmation_token', 'invite_token', 'recovery_token', 'email_change_token'];
+      const authAction = authActions.find(function (action) {
+        return tokenParams.has(action);
+      });
+
+      if (!authAction) return;
+
+      notice.hidden = false;
+      message.textContent = 'Processing your secure account link…';
+
+      function clearAuthFragment() {
+        window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
+      }
+
+      function showEditorLink(text) {
+        message.textContent = text;
+        editorLink.hidden = false;
+      }
+
+      if (!window.netlifyIdentity) {
+        message.textContent = 'Account verification could not start. Please request a fresh email link from the site administrator.';
+        clearAuthFragment();
+        return;
+      }
+
+      window.netlifyIdentity.on('init', function (user) {
+        if (authAction === 'recovery_token') {
+          showEditorLink('Your secure password-reset link has been processed. Continue to the updates editor to sign in.');
+        } else if (user) {
+          showEditorLink('Your account link has been processed. Continue to the updates editor.');
+        } else {
+          showEditorLink('Your account link has been opened. Continue to the updates editor and sign in. If verification failed or expired, request a fresh email link.');
+        }
+        clearAuthFragment();
+      });
+
+      window.netlifyIdentity.on('error', function () {
+        message.textContent = 'This account link could not be verified or may have expired. Please ask the site administrator to send a fresh email link.';
+        editorLink.hidden = true;
+        clearAuthFragment();
+      });
+    }());
+
+    (function () {
+      const status = document.getElementById('updates-status');
+      const feed = document.getElementById('updates-feed');
+      const title = document.getElementById('featured-title');
+      const category = document.getElementById('featured-category');
+      const date = document.getElementById('featured-date');
+      const summary = document.getElementById('featured-summary');
+      const image = document.getElementById('featured-image');
+      const controls = document.getElementById('carousel-controls');
+      const count = document.getElementById('carousel-count');
+      const recent = document.getElementById('recent-updates');
+      const grid = document.getElementById('update-grid');
+      let featuredUpdates = [];
+      let currentIndex = 0;
+
+      function formatDate(value) {
+        const parsed = new Date(value + 'T00:00:00');
+        return Number.isNaN(parsed.getTime())
+          ? ''
+          : new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }).format(parsed);
+      }
+
+      function makeCard(update) {
+        const card = document.createElement('article');
+        card.className = 'update-card';
+
+        const meta = document.createElement('div');
+        meta.className = 'update-meta';
+        const badge = document.createElement('span');
+        badge.className = 'update-category';
+        badge.textContent = update.category;
+        const published = document.createElement('time');
+        published.textContent = formatDate(update.date);
+        meta.append(badge, published);
+
+        const heading = document.createElement('h4');
+        heading.textContent = update.title;
+        const description = document.createElement('p');
+        description.textContent = update.summary;
+        card.append(meta, heading, description);
+        return card;
+      }
+
+      function showFeaturedUpdate(index) {
+        currentIndex = (index + featuredUpdates.length) % featuredUpdates.length;
+        const update = featuredUpdates[currentIndex];
+        title.textContent = update.title;
+        category.textContent = update.category;
+        date.textContent = formatDate(update.date);
+        date.dateTime = update.date;
+        summary.textContent = update.summary;
+        count.textContent = (currentIndex + 1) + ' / ' + featuredUpdates.length;
+
+        const imageUrl = typeof update.image === 'string' ? update.image.trim() : '';
+        if (imageUrl) {
+          image.src = imageUrl;
+          image.alt = update.image_alt || update.title;
+          image.hidden = false;
+          image.onerror = function () {
+            image.hidden = true;
+          };
+        } else {
+          image.removeAttribute('src');
+          image.alt = '';
+          image.hidden = true;
+        }
+      }
+
+      async function loadUpdates() {
+        try {
+          const response = await fetch('./updates.json', { cache: 'no-store' });
+          if (!response.ok) throw new Error('Updates could not be loaded.');
+          const data = await response.json();
+          const updates = Array.isArray(data.updates)
+            ? data.updates.filter(function (update) {
+              return update && update.published !== false &&
+                typeof update.title === 'string' && update.title.trim() &&
+                typeof update.category === 'string' && update.category.trim() &&
+                typeof update.date === 'string' && typeof update.summary === 'string';
+            })
+            : [];
+          updates.sort(function (a, b) {
+            return new Date(b.date).getTime() - new Date(a.date).getTime();
+          });
+
+          if (updates.length === 0) {
+            status.textContent = 'No updates have been published yet. Please check back soon.';
+            return;
+          }
+
+          featuredUpdates = updates.slice(0, 5);
+          showFeaturedUpdate(0);
+          controls.hidden = featuredUpdates.length < 2;
+          grid.replaceChildren(...updates.slice(1).map(makeCard));
+          recent.hidden = updates.length < 2;
+          feed.hidden = false;
+          status.hidden = true;
+        } catch (error) {
+          console.error('Unable to load Bhavya Associates updates:', error);
+          status.textContent = 'Updates are temporarily unavailable. Please check back soon.';
+        }
+      }
+
+      document.getElementById('previous-update').addEventListener('click', function () {
+        showFeaturedUpdate(currentIndex - 1);
+      });
+      document.getElementById('next-update').addEventListener('click', function () {
+        showFeaturedUpdate(currentIndex + 1);
+      });
+      loadUpdates();
+    }());
+
+    document.getElementById('enquiry-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!this.reportValidity()) return;
+
+      const form = new FormData(this);
+      const location = String(form.get('location') || '').trim();
+      const details = String(form.get('details') || '').trim();
+      const message = [
+        'Hello Bhavya Associates, I found you through your website.',
+        '',
+        'My name: ' + String(form.get('name')).trim(),
+        'Topic: ' + String(form.get('service')),
+        ...(location ? ['Town or city: ' + location] : []),
+        ...(details ? ['My question: ' + details] : [])
+      ].join('\n');
+      const whatsappUrl = 'https://wa.me/917013061131?text=' + encodeURIComponent(message);
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    });
+  </script>
+</body>
+</html>
