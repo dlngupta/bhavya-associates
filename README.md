@@ -36,6 +36,9 @@ editor is `https://bhavya-associates.netlify.app/admin/`.
 The CMS saves posts and images directly to the repository's `master` branch.
 Netlify deploys each save. The editor URL is public, but only invited,
 authenticated users with Git Gateway access can edit content.
+The homepage loads Netlify's Identity widget for confirmation, invitation, and
+password-recovery links. Keep the token fragment intact until the widget
+processes it; the site must show the widget's password form for recovery.
 
 ## How updates work
 

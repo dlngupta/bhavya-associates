@@ -506,36 +506,41 @@
       notice.hidden = false;
       message.textContent = 'Processing your secure account link…';
 
-      function clearAuthFragment() {
-        window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
-      }
-
       function showEditorLink(text) {
         message.textContent = text;
         editorLink.hidden = false;
       }
 
       if (!window.netlifyIdentity) {
-        message.textContent = 'Account verification could not start. Please request a fresh email link from the site administrator.';
-        clearAuthFragment();
+        message.textContent = 'The secure account form could not load. Please reload this page or ask the site administrator for help.';
         return;
       }
 
-      window.netlifyIdentity.on('init', function (user) {
+      window.netlifyIdentity.on('init', function () {
         if (authAction === 'recovery_token') {
-          showEditorLink('Your secure password-reset link has been processed. Continue to the updates editor to sign in.');
-        } else if (user) {
-          showEditorLink('Your account link has been processed. Continue to the updates editor.');
+          message.textContent = 'Set your new password in the Netlify Identity dialog. After it is saved, continue to the updates editor.';
         } else {
-          showEditorLink('Your account link has been opened. Continue to the updates editor and sign in. If verification failed or expired, request a fresh email link.');
+          message.textContent = 'Complete the account action in the Netlify Identity dialog.';
         }
-        clearAuthFragment();
       });
 
       window.netlifyIdentity.on('error', function () {
-        message.textContent = 'This account link could not be verified or may have expired. Please ask the site administrator to send a fresh email link.';
+        message.textContent = authAction === 'recovery_token'
+          ? 'This password-reset link could not be verified or may have expired. Request a fresh reset email and open its link on this site.'
+          : 'This account link could not be verified or may have expired. Please ask the site administrator to send a fresh email link.';
         editorLink.hidden = true;
-        clearAuthFragment();
+      });
+
+      window.netlifyIdentity.on('login', function () {
+        if (authAction === 'recovery_token') {
+          showEditorLink('Your new password is saved. Continue to the updates editor and sign in.');
+        } else if (authAction === 'confirmation_token') {
+          showEditorLink('Your email is confirmed. Continue to the updates editor.');
+        } else if (authAction === 'invite_token') {
+          showEditorLink('Your account is ready. Continue to the updates editor.');
+        } else if (authAction === 'email_change_token') {
+          showEditorLink('Your account details are updated. Continue to the updates editor.');
+        }
       });
     }());
 
