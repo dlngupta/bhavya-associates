@@ -13,6 +13,15 @@
       "category": "Policy Information",
       "date": "2026-10-29",
       "summary": "LIC Update"
+    },
+    {
+      "published": true,
+      "category": "Financial Tip",
+      "title": "Financial TIP",
+      "date": "2026-10-29",
+      "summary": "Financial information ",
+      "image": "/images/updates/244354.jpg",
+      "image_alt": "Financial update "
     }
   ]
 }
