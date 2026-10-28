@@ -1,3 +1,13 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "published": true,
+      "title": "Test",
+      "category": "Policy Information",
+      "date": "2026-10-29",
+      "summary": "Test",
+      "image": "/images/updates/photo1.jpg",
+      "image_alt": "sddsadasd"
+    }
+  ]
 }
